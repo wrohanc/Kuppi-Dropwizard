@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Properties>
+        <Property name="log-path">../logs/</Property>
+    </Properties>
+    <Appenders>
+        <RollingFile name="RollingFile" fileName="${log-path}/IORDER_MANAGER.log"
+                     filePattern="${log-path}/log-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <pattern>%d{yyyy/MMM/dd-HH:mm:ss,SSS}- %c{1} [%t]: %m%n</pattern>
+            </PatternLayout>
+            <!--                        <JSONLayout complete="false" compact="false" properties="true">
+
+                                    </JSONLayout>-->
+            <Policies>
+                <SizeBasedTriggeringPolicy size="200MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="4"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="root" level="info" additivity="false">
+            <appender-ref ref="RollingFile" level="info"/>
+        </Logger>
+        <Root level="debug" additivity="false">
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>

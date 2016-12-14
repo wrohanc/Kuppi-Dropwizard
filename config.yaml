@@ -1,0 +1,30 @@
+database:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://127.0.0.1:3306/kuppi_db
+  user: root
+  password: root
+
+server:
+  rootPath: /dropwizard-kuppi/*
+  adminContextPath: /dropwizard/admin
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
+
+documentation:
+  resourcePackage: com.ro.learn.resources
+
+jerseyClient :
+    minThreads : 1
+    maxThreads : 2
+    workQueueSize : 8
+    gzipEnabled : true
+    gzipEnabledForRequests : true
+    chunkedEncodingEnabled : true
+
+logging:
+  loggers:
+    org.glassfish.jersey.filter.LoggingFilter: INFO
