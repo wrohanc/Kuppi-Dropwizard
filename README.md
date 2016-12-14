@@ -1,5 +1,5 @@
 # Kuppi-Dropwizard
-Resources for session on Enterprise Java Beans
+Resources for session on Dropwizard
 
 1. Restful webservices.
 2. What is dropwizard?
