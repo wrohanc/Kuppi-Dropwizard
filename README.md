@@ -9,3 +9,5 @@ Resources for session on Dropwizard
 6. When to use dropwizard?
 7. Introduction to micro-service architecture.
 8. Micro services with dropwizard.
+
+// test
